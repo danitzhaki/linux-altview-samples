@@ -1,0 +1,31 @@
+{
+  "schema": "altview-scenario/1",
+  "why": "execxview PoC: NULL the maple-tree leaf slot of the VMA at 0x2a0000000000 (pid 622); page tables, page contents, map_count and the VMA object unchanged",
+  "synthetic": true,
+  "statement": "Offline modification of a copy of a benign capture; not real malware.",
+  "src": "vm-6.6/dumps/deb12-6.6.162-default.elf",
+  "src_sha256": "7688f7c86dd066ecdbd5472184ff75c1777a7c6f72be3159f4920e44740be8c6",
+  "dst": "vm-6.6/scenarios/r2_exec_hide_vma.elf",
+  "dst_sha256": "cd396124723ceadf6199949f25a1e8e816cf508703c73a8a2067c98dbf6f3c9d",
+  "bytes_changed": 8,
+  "patches": [
+    {
+      "pa": "0xbb27d88",
+      "file_offset": "0xbb18c58",
+      "old": "a8cdaec2e088ffff",
+      "new": "0000000000000000"
+    }
+  ],
+  "notes": [
+    "pid=622",
+    "comm=av_exec",
+    "mm=0x88e0c3907900",
+    "map_count=32",
+    "vma=0x88e0c2aecda8",
+    "vma_range=['0x2a0000000000', '0x2a0000002000']",
+    "maple_range=['0x2a0000000000', '0x2a0000001fff']",
+    "slot_va=0x88e0cbb27d88",
+    "slot_pa=0xbb27d88",
+    "slot_va -> slot_pa via the kernel layer (Volatility LinuxIntel32e translate)"
+  ]
+}

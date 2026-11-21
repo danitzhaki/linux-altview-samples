@@ -1,0 +1,31 @@
+{
+  "schema": "altview-scenario/1",
+  "why": "cgroupxview scenario 2: unlink leaf cgroup /altview/a/a1 (0x88e0c4965800) from its parent's self.children by rewriting only its neighbours' sibling pointers (H view only)",
+  "synthetic": true,
+  "statement": "Offline modification of a copy of a benign capture; not real malware.",
+  "src": "vm-6.6/dumps/deb12-6.6.162-default.elf",
+  "src_sha256": "7688f7c86dd066ecdbd5472184ff75c1777a7c6f72be3159f4920e44740be8c6",
+  "dst": "vm-6.6/scenarios/r2/cgroup_unlink_hierarchy.elf",
+  "dst_sha256": "0cb4c8ae295a526d776cd0035e445d987248d94c05c559a63e77660529e0f5e1",
+  "bytes_changed": 16,
+  "patches": [
+    {
+      "pa": "0x4962830",
+      "file_offset": "0x4953700",
+      "old": "205896c4e088ffff",
+      "new": "302896c4e088ffff"
+    },
+    {
+      "pa": "0x4962838",
+      "file_offset": "0x4953708",
+      "old": "205896c4e088ffff",
+      "new": "302896c4e088ffff"
+    }
+  ],
+  "notes": [
+    "target {\"scenario\": \"cgroup_unlink_hierarchy\", \"path\": \"/altview/a/a1\", \"cgroup\": \"0x88e0c4965800\", \"sibling\": \"0x88e0c4965820\"}",
+    "cgroup /altview/a/a1 self.sibling prev(0x88e0c4962830)->next: VA 0x88e0c4962830 -> PA 0x4962830 (memory_layer); 0xffff88e0c4965820 -> 0xffff88e0c4962830",
+    "cgroup /altview/a/a1 self.sibling next(0x88e0c4962830)->prev: VA 0x88e0c4962838 -> PA 0x4962838 (memory_layer); 0xffff88e0c4965820 -> 0xffff88e0c4962830"
+  ]
+}
+{"scenario": "cgroup_unlink_hierarchy", "path": "/altview/a/a1", "cgroup": "0x88e0c4965800", "sibling": "0x88e0c4965820"}

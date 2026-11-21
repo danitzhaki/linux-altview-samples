@@ -1,0 +1,4 @@
+*.elf
+*.elf.xz
+*.part
+.DS_Store

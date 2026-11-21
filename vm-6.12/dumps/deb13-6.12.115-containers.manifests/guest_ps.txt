@@ -1,0 +1,14 @@
+    PID     TID STAT COMMAND
+   1084    1084 Zl   zombie_leader
+   1084    1087 Sl   zombie_leader
+   1225    1225 Z    av_zombie
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+42227ab59212   busybox   "true"                   17 seconds ago   Exited (0) 15 seconds ago             av_ct_stopped
+eb5455df5837   busybox   "sleep 100000"           18 seconds ago   Up 17 seconds                         av_ct_shared
+735bcd8ab141   busybox   "sleep 100000"           21 seconds ago   Up 19 seconds                         av_ct_exec
+cd7b60a91b48   busybox   "sleep 100000"           22 seconds ago   Up 21 seconds                         av_ct_priv
+74d90d887aa2   busybox   "sleep 100000"           24 seconds ago   Up 22 seconds                         av_ct_hostpid
+dbde7cd2d78c   busybox   "sleep 100000"           25 seconds ago   Up 24 seconds                         av_ct_hostnet
+23a6ef12cc0a   busybox   "sh -c 'sleep 100000…"   26 seconds ago   Up 25 seconds                         av_ct_plain
+CONTAINER ID  IMAGE                             COMMAND       CREATED         STATUS         PORTS       NAMES
+c11ba7b1df36  docker.io/library/busybox:latest  sleep 100000  15 seconds ago  Up 14 seconds              av_ct_pod

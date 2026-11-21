@@ -1,0 +1,30 @@
+{
+  "schema": "altview-scenario/1",
+  "why": "cgroupxview scenario 1: unlink pid 741 (av_sl_b2) from css_set 0x88e0c24fbc00 tasks list by rewriting only its neighbours' cg_list pointers (R view only)",
+  "synthetic": true,
+  "statement": "Offline modification of a copy of a benign capture; not real malware.",
+  "src": "vm-6.6/dumps/deb12-6.6.162-default.elf",
+  "src_sha256": "7688f7c86dd066ecdbd5472184ff75c1777a7c6f72be3159f4920e44740be8c6",
+  "dst": "vm-6.6/scenarios/r2/cgroup_unlink_task.elf",
+  "dst_sha256": "060d02c3152de9f6d8aec71fc8c64b4e2bca526fe6d59a04c301955ca65dfe4d",
+  "bytes_changed": 16,
+  "patches": [
+    {
+      "pa": "0x3ab0e18",
+      "file_offset": "0x3aa1ce8",
+      "old": "18aff6c3e088ffff",
+      "new": "90bc4fc2e088ffff"
+    },
+    {
+      "pa": "0x24fbc98",
+      "file_offset": "0x24ecb68",
+      "old": "18aff6c3e088ffff",
+      "new": "180eabc3e088ffff"
+    }
+  ],
+  "notes": [
+    "target {\"scenario\": \"cgroup_unlink_task\", \"comm\": \"av_sl_b2\", \"pid\": 741, \"task\": \"0x88e0c3f6a100\", \"css_set\": \"0x88e0c24fbc00\", \"cg_list\": \"0x88e0c3f6af18\"}",
+    "task av_sl_b2 cg_list prev(0x88e0c3ab0e18)->next: VA 0x88e0c3ab0e18 -> PA 0x3ab0e18 (memory_layer); 0xffff88e0c3f6af18 -> 0xffff88e0c24fbc90",
+    "task av_sl_b2 cg_list next(0x88e0c24fbc90)->prev: VA 0x88e0c24fbc98 -> PA 0x24fbc98 (memory_layer); 0xffff88e0c3f6af18 -> 0xffff88e0c3ab0e18"
+  ]
+}

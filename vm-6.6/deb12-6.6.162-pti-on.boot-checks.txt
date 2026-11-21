@@ -1,0 +1,4 @@
+6.6.162-lab
+0
+[    0.027072] Kernel/User page tables isolation: force enabled on command line.
+[    0.084469] Kernel/User page tables isolation: enabled

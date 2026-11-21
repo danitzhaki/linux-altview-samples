@@ -1,0 +1,4 @@
+    PID     TID STAT COMMAND
+    636     636 Zl   zombie_leader
+    636     639 Sl   zombie_leader
+    778     778 Z    av_zombie
